@@ -52,33 +52,35 @@ public class Main {
         Client client;
 
         System.out.println("Id:");
-        String id = scanner.nextLine();
+        Long id = scanner.nextLong();
         client = createClient();
-        client.setId(Long.valueOf(id));
-//        client.setId(Long.valueOf(scanner.nextLine()));
+        client.setId(id);
+
         return client;
     }
 
     private static Book modifyBook() {
         Book book;
-        book = createBook();
 
         System.out.println("Id:");
-        book.setId(Long.valueOf(scanner.nextLine()));
+        Long id = scanner.nextLong();
+        book = createBook();
+        book.setId(id);
         return book;
     }
 
     private static Author modifyAuthor() {
         Author author;
-        author = createAuthor();
 
         System.out.println("Id:");
-        author.setId(Long.valueOf(scanner.nextLine()));
+        Long id = scanner.nextLong();
+        author = createAuthor();
+        author.setId(id);
         return author;
     }
 
     private static void deleteWhat() {
-        String command = null;
+        String command;
         System.out.println("Select number:\n1. Author\n2. Book\n3. Client");
         command = scanner.nextLine();
         if (command.equalsIgnoreCase("1")) {
@@ -97,7 +99,7 @@ public class Main {
     }
 
     private static void listWhat() {
-        String command = null;
+        String command;
         System.out.println("Select number:\n1. Author\n2. Book\n3. Client");
         command = scanner.nextLine();
         if (command.equalsIgnoreCase("1")) {
@@ -113,7 +115,7 @@ public class Main {
     }
 
     private static void addWhat() {
-        String command = null;
+        String command;
         System.out.println("Select number:\n1. Author\n2. Book\n3. Client");
         command = scanner.nextLine();
         if (command.equalsIgnoreCase("1")) {
